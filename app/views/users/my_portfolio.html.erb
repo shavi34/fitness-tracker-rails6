@@ -1,0 +1,49 @@
+<h1>My Portfolio</h1>
+
+<div class='search-area'>
+  <h3>Search Stocks</h3>
+  <%= form_tag search_stock_path, remote: true, method: :get do %>
+    <div class="form-group row">
+      <div class="col-sm-9 no-right-padding">
+        <%= text_field_tag :stock, params[:stock], placeholder: "Stock ticker symbol", autofocus: true, class: "form-control form-control-lg" %>
+      </div>
+      <div class="col-sm-3 no-left-padding">
+        <%= button_tag type: :submit, class: "btn btn-success" do %>
+          <%= fa_icon 'search 2x' %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+<div id="results">
+
+</div>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
